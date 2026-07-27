@@ -32,15 +32,6 @@
             flavor = "tap-preferred";
         };
 
-        RCLK_to_M: RCLK_to_M {
-            compatible = "zmk,behavior-tap-dance";
-            label = "RCLK_TO_M";
-            #binding-cells = <0>;
-            bindings = <&mkp RCLK>, <&kp M>;
-
-            tapping-term-ms = <250>;
-        };
-
         hml: hmlayer {
             compatible = "zmk,behavior-hold-tap";
             label = "Home_ROW_Layer";
@@ -61,34 +52,14 @@
             key-positions = <0 1>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <20 21>;
-        };
-
-        lang {
-            bindings = <&hm LG(SPACE) LANGUAGE_1>;
-            key-positions = <10 12>;
-        };
-
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <9 8>;
         };
 
-        minus_equal {
-            bindings = <&hm EQUAL MINUS>;
-            key-positions = <18 19>;
-        };
-
         slash_quet {
             bindings = <&kp SLASH>;
             key-positions = <29 28>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <29 19>;
         };
 
         win {
@@ -99,11 +70,6 @@
         bt_layer {
             bindings = <&mo 5>;
             key-positions = <4 24>;
-        };
-
-        prev_click {
-            bindings = <&mkp MB4>;
-            key-positions = <15 26>;
         };
 
         lclk_left {
@@ -121,11 +87,6 @@
             key-positions = <13 12>;
         };
 
-        ctrl+shift+num+ {
-            bindings = <&kp LC(LS(KP_PLUS))>;
-            key-positions = <25 29>;
-        };
-
         prev_left {
             bindings = <&mkp MB4>;
             key-positions = <13 11>;
@@ -138,10 +99,10 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&hm KP_NUMBER_1 Q  &kp W        &hm KP_NUMBER_3 E  &kp R         &hm PSCRN T     &kp Y         &hm KP_NUMBER_7 U  &kp I      &kp O    &hm KP_NUMBER_0 P
-&kp A              &kp S        &kp D              &hml 3 F      &hml 4 G        &kp H         &kp J              &kp K      &kp L    &hm SEMICOLON SQT
-&hm LC(Z) Z        &hm LC(X) X  &hm LC(C) C        &hm LC(V) V   &kp B           &hml 3 N      &kp M              &kp COMMA  &kp DOT  &kp ENTER
-                                &kp LCTRL          &kp LEFT_ALT  &kp LEFT_SHIFT  &hm END HOME  &mo 1              &kp SPACE
+&kp Q        &kp W        &kp E        &kp R         &kp T           &kp Y         &kp U  &kp I      &kp O    &kp P
+&kp A        &kp S        &kp D        &hml 3 F      &hml 4 G        &kp H         &kp J  &kp K      &kp L    &hm SEMICOLON SQT
+&hm LC(Z) Z  &hm LC(X) X  &hm LC(C) C  &hm LC(V) V   &kp B           &hml 3 N      &kp M  &kp COMMA  &kp DOT  &kp ENTER
+                          &kp LCTRL    &kp LEFT_ALT  &kp LEFT_SHIFT  &hm END HOME  &mo 1  &kp SPACE
             >;
         };
 
@@ -158,10 +119,10 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans     &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mkp LCLK  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans     &RCLK_to_M  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans     &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mkp LCLK  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans     &mkp RCLK  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans     &trans     &trans
             >;
         };
 
