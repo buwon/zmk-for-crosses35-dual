@@ -51,6 +51,7 @@
         input-processors = <
             &zip_xy_to_scroll_mapper
 			&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT //세로 스크롤 방향 반전
+			&zip_scroll_scaler 1 2 //스크롤 속도 조절
 			&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
         >;
 	};
