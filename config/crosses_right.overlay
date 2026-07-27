@@ -1,0 +1,57 @@
+#include <scroll-snap.dtsi>
+
+&trackball_central {
+    cpi = <1000>;
+};
+
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+//오토마우스 레이어 자동 이탈 설정
+&zip_temp_layer {
+    excluded-positions = < //아래는 마우스키
+		//13 // F
+		//14 // G
+		15 // H
+		//24 // B
+		26 // M
+		30 // Ctrl
+		31 // Alt
+		32 // Shift
+    >;
+	require-prior-idle-ms = <300>; //레이어 전환 오작동 방지
+};
+
+&trackball_central_listener {
+    status = "okay";
+    device = <&trackball_central>;
+    input-processors = <
+		&zip_ble_report_rate_limit
+		&zip_temp_layer 2 9000 //오토마우스 레이어 1000 = 1초
+>;
+		
+	sniper_override {
+        layers = <4>; //레이어 지정
+        input-processors = <
+            &zip_xy_scaler 1 3 //포인팅 속도 조절
+        >;
+    };
+	
+	scroll_override {
+        layers = <3>; //레이어 지정
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+			&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT //세로 스크롤 방향 반전
+			&zip_scroll_x_scaler 0 1 //가로 스크롤 제한
+        >;
+	};
+};
