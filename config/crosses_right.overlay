@@ -19,10 +19,7 @@
 //오토마우스 레이어 자동 이탈 설정
 &zip_temp_layer {
     excluded-positions = < //아래는 마우스키
-		//13 // F
-		//14 // G
 		15 // H
-		//24 // B
 		26 // M
 		30 // Ctrl
 		31 // Alt
