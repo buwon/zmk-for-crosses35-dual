@@ -1,7 +1,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 &trackball_peripheral {
-    cpi = <1000>;
+    cpi = <700>;  // 스크롤 속도 (기존 1000 → 700, 30% 감속)
     x-invert;
 	/delete-property/ y-invert;
 };

@@ -1,0 +1,21 @@
+name: Draw ZMK keymaps
+on:
+  workflow_dispatch: # 수동 실행 가능
+  push: # 아래 경로가 바뀌면 자동 실행
+    paths:
+      - "config/*.keymap"
+      - "config/*.json"
+      - "keymap_drawer.config.yaml"
+
+jobs:
+  draw:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write # 워크플로가 리포에 커밋할 수 있도록 허용
+    with:
+      keymap_patterns: "config/*.keymap" # 파싱할 keymap 경로
+      config_path: "keymap_drawer.config.yaml" # 스타일/파싱 설정
+      output_folder: "keymap-drawer" # SVG/YAML 저장 위치
+      west_config_path: "" # west 모듈은 안 받음 (물리 레이아웃은 json으로 직접 지정)
+      draw_args: "crosses:'-j config/info.json'" # crosses 물리 레이아웃 명시
+      commit_message: "docs: 키맵 다이어그램 자동 갱신"
