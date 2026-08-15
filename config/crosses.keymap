@@ -16,6 +16,14 @@
 #define U_FUN    6
 #define U_BUTTON 7
 
+// 엄지로 클릭 버튼(&mkp)을 누르는 순간, 트랙볼용 zip_temp_layer 타임아웃을 300ms로 재설정
+// -> 클릭 직후 거의 바로 Base 레이어로 복귀 (Enter/Esc 등이 곧바로 다시 정상 동작)
+// mkp_input_listener는 &mkp가 정의될 때(behaviors/mouse_keys.dtsi) 같이 생기므로
+// shield .overlay(먼저 처리됨)가 아니라 여기(.keymap, 나중에 처리됨)에 둬야 함
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 2 300>;
+};
+
 &lt {
     tapping-term-ms = <200>;
     quick-tap-ms = <150>;

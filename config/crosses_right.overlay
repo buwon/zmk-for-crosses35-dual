@@ -40,9 +40,3 @@
 		&zip_temp_layer 2 3000 //좌측 트랙볼(스크롤) 움직여도 동일하게 Mouse 레이어 자동 활성화
 	>;
 };
-
-// 엄지로 클릭 버튼(&mkp)을 누르는 순간, 같은 zip_temp_layer 타임아웃을 300ms로 재설정
-// -> 클릭 직후 거의 바로 Base 레이어로 복귀 (Enter/Esc 등이 곧바로 다시 정상 동작)
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 2 300>;
-};
