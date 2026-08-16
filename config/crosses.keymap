@@ -45,6 +45,17 @@
             flavor = "tap-preferred";
         };
 
+        // hm과 동일하지만 Alt/GUI 오작동 방지를 위해 tapping-term을 1.5배(300ms)로 늘림
+        hma: my_homerow_mod_altgui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MY_HOMEROW_MOD_ALTGUI";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+        };
+
         // Miryoku u_lt equivalent: hold = layer, tap = key
         hml: hmlayer {
             compatible = "zmk,behavior-hold-tap";
@@ -52,7 +63,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <400>;
             flavor = "tap-preferred";
         };
     };
@@ -64,8 +75,8 @@
             display-name = "Base";
             bindings = <
 &kp Q             &kp W          &kp E          &kp R           &kp T             &kp Y           &kp U          &kp I           &kp O          &kp P
-&hm LGUI A        &hm LALT S     &hm LCTRL D    &hm LSHFT F     &kp G             &kp H           &hm LSHFT J    &hm LCTRL K     &hm LALT L     &hm LGUI SQT
-&hml U_BUTTON Z   &hm RALT X     &kp C          &kp V           &kp B             &kp N           &kp M          &kp COMMA       &hm RALT DOT   &hml U_BUTTON SLASH
+&hma LGUI A       &hma LALT S    &hm LCTRL D    &hm LSHFT F     &kp G             &kp H           &hm LSHFT J    &hm LCTRL K     &hma LALT L    &hma LGUI SQT
+&hml U_BUTTON Z   &hma RALT X    &kp C          &kp V           &kp B             &kp N           &kp M          &kp COMMA       &hma RALT DOT  &hml U_BUTTON SLASH
                                  &hml U_MEDIA ESC  &hml U_NAV SPACE  &hml U_MOUSE TAB    &hml U_SYM RET  &hml U_NUM BSPC  &hml U_FUN DEL
             >;
         };
@@ -84,8 +95,8 @@
             display-name = "Mouse";
             bindings = <
 &bootloader  &none      &none         &to U_BASE   &none       &kp LC(Y)  &kp LC(V)        &kp LC(C)        &kp LC(X)         &kp LC(Z)
-&kp LGUI     &kp LALT   &kp LCTRL     &kp LSHFT    &none       &none      &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_UP      &mmv MOVE_RIGHT
-&none        &kp RALT   &to U_SYM     &to U_MOUSE  &none       &none      &msc SCRL_LEFT   &msc SCRL_DOWN   &msc SCRL_UP      &msc SCRL_RIGHT
+&kp LGUI     &kp LALT   &kp LCTRL     &kp LSHFT    &none       &none      &kp LANG1  &kp LANG2  &none  &none
+&none        &kp RALT   &to U_SYM     &to U_MOUSE  &none       &none      &none      &none      &none  &none
                          &mkp MCLK     &mkp LCLK    &mkp RCLK    &mkp RCLK  &mkp LCLK        &mkp MCLK
             >;
         };

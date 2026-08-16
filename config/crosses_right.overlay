@@ -28,7 +28,7 @@
     device = <&trackball_central>;
     input-processors = <
 		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 3000 //트랙볼 움직이면 Mouse 레이어(2) 자동 활성화, 3초간 유지
+		&zip_temp_layer 2 1000 //트랙볼 움직이면 Mouse 레이어(2) 자동 활성화, 3초간 유지
 	>;
 };
 
@@ -37,6 +37,6 @@
     status = "okay";
     input-processors = <
 		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 3000 //좌측 트랙볼(스크롤) 움직여도 동일하게 Mouse 레이어 자동 활성화
+		&zip_temp_layer 2 1000 //좌측 트랙볼(스크롤) 움직여도 동일하게 Mouse 레이어 자동 활성화
 	>;
 };
