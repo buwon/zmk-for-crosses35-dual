@@ -6,7 +6,10 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 
-#if IS_ENABLED(CONFIG_ZMK_BLE)
+/* hid.c / endpoints.c / keymap.c are only compiled for non-split boards or the
+ * split central (see app/CMakeLists.txt) — the peripheral doesn't have them, and
+ * only the central talks to the host anyway, so restrict this listener the same way. */
+#if IS_ENABLED(CONFIG_ZMK_BLE) && (!IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL))
 
 #include <zmk/ble.h>
 #include <zmk/endpoints.h>
@@ -39,4 +42,4 @@ static int reset_state_on_ble_reconnect(const zmk_event_t *eh) {
 ZMK_LISTENER(reset_state_on_ble_reconnect, reset_state_on_ble_reconnect);
 ZMK_SUBSCRIPTION(reset_state_on_ble_reconnect, zmk_ble_active_profile_changed);
 
-#endif // IS_ENABLED(CONFIG_ZMK_BLE)
+#endif // IS_ENABLED(CONFIG_ZMK_BLE) && (!IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL))
