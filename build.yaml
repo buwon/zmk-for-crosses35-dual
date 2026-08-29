@@ -3,16 +3,10 @@ include:
   - board: nice_nano
     shield: crosses_left
     artifact-name: crosses_35_left
-    # 재연결 진단용: 왼쪽(peripheral)의 split 링크 connect/disconnect 로그.
-    # 원인 확인 후 이 snippet 줄을 제거할 것.
-    snippet: zmk-usb-logging
   - board: nice_nano
     shield: crosses_right
     artifact-name: crosses_35_right
-    # 재연결 진단용: 호스트 링크(오른쪽<->PC) 로그. 진단 끝나면 아래 두 줄을
-    #   snippet: studio-rpc-usb-uart
-    #   cmake-args: -DCONFIG_ZMK_STUDIO=y
-    # 로 되돌릴 것. (진단 동안 ZMK Studio 사용 불가)
-    snippet: zmk-usb-logging
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: nice_nano
     shield: settings_reset
