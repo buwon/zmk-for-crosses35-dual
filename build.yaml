@@ -9,12 +9,10 @@ include:
   - board: nice_nano
     shield: crosses_right
     artifact-name: crosses_35_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
-    # 호스트 링크(오른쪽<->PC) 로그가 필요하면, 진단하는 동안만 위 두 줄
-    # (snippet / cmake-args)을 아래 한 줄로 교체:
-    #   snippet: zmk-usb-logging
-    # (Studio는 그 동안 못 씀. studio-rpc-usb-uart 와 zmk-usb-logging 을
-    #  동시에 얹으면 플래시 용량이 빠듯하고 snippet 다중 지정이 까다로움)
+    # 재연결 진단용: 호스트 링크(오른쪽<->PC) 로그. 진단 끝나면 아래 두 줄을
+    #   snippet: studio-rpc-usb-uart
+    #   cmake-args: -DCONFIG_ZMK_STUDIO=y
+    # 로 되돌릴 것. (진단 동안 ZMK Studio 사용 불가)
+    snippet: zmk-usb-logging
   - board: nice_nano
     shield: settings_reset
