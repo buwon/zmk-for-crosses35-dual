@@ -22,21 +22,24 @@
 	require-prior-idle-ms = <300>; //레이어 전환 오작동 방지
 };
 
-// 우측(central) 트랙볼: 로컬 센서 이벤트 → Mouse 레이어 자동 활성화
+// 우측(central) 트랙볼: 로컬 센서 이벤트 → Mouse Auto 레이어 자동 활성화
+// 레이어 8 = crosses.keymap의 U_MOUSE_AUTO(mouse_auto_layer). 엄지 클릭 버튼 외
+// 전부 &trans라서, 자동 활성화 중에도 타이핑에 영향을 주지 않음.
+// (수동으로 엄지 홀드해 들어가는 U_MOUSE(2)는 모디파이어/단축키를 그대로 유지)
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
     input-processors = <
 		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 1000 //트랙볼 움직이면 Mouse 레이어(2) 자동 활성화, 3초간 유지
+		&zip_temp_layer 8 1000 //트랙볼 움직이면 Mouse Auto 레이어(8) 자동 활성화, 1초간 유지
 	>;
 };
 
-// 좌측(peripheral) 트랙볼: split 링크로 전달받은 스크롤 이벤트 → 같은 Mouse 레이어 자동 활성화
+// 좌측(peripheral) 트랙볼: split 링크로 전달받은 스크롤 이벤트 → 같은 Mouse Auto 레이어 자동 활성화
 &trackball_peripheral_listener {
     status = "okay";
     input-processors = <
 		&zip_ble_report_rate_limit
-		&zip_temp_layer 2 1000 //좌측 트랙볼(스크롤) 움직여도 동일하게 Mouse 레이어 자동 활성화
+		&zip_temp_layer 8 1000 //좌측 트랙볼(스크롤) 움직여도 동일하게 Mouse Auto 레이어 자동 활성화
 	>;
 };
