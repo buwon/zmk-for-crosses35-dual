@@ -21,7 +21,7 @@ layers:
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: '''', h: LGUI}
-  - {t: Z, h: Fun}
+  - {t: Z, h: Button}
   - {t: X, h: '$$mdi:apple-keyboard-option$$'}
   - C
   - V
@@ -30,13 +30,13 @@ layers:
   - M
   - ','
   - {t: ., h: '$$mdi:apple-keyboard-option$$'}
-  - {t: /, h: Fun}
-  - {t: '$$mdi:keyboard-esc$$', h: Mouse Auto}
+  - {t: /, h: Button}
+  - {t: '$$mdi:keyboard-esc$$', h: Media}
   - {t: '$$mdi:keyboard-space$$', h: Nav}
   - {t: '$$mdi:keyboard-tab$$', h: Mouse}
-  - {t: '$$mdi:keyboard-return$$', h: Num}
-  - {t: '$$mdi:backspace$$', h: Media}
-  - {t: DEL, h: Sym}
+  - {t: '$$mdi:keyboard-return$$', h: Sym}
+  - {t: '$$mdi:backspace$$', h: Num}
+  - {t: DEL, h: Fun}
   Nav:
   - '&bootloader'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -60,7 +60,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
-  - {t: Media, h: toggle}
+  - {t: Num, h: toggle}
   - {t: Nav, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - INS
@@ -97,7 +97,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-option$$
-  - {t: Num, h: toggle}
+  - {t: Sym, h: toggle}
   - {t: Mouse, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -108,6 +108,191 @@ layers:
   - {t: '$$mdi:mouse$$', h: middle}
   - {t: '$$mdi:mouse-left-click$$', h: left}
   - {t: '$$mdi:mouse-right-click$$', h: right, type: held}
+  - {t: '$$mdi:mouse-right-click$$', h: right}
+  - {t: '$$mdi:mouse-left-click$$', h: left}
+  - {t: '$$mdi:mouse$$', h: middle}
+  Media:
+  - '&bootloader'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Base, h: toggle}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&studio_unlock'
+  - LGUI
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - EP TOG
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-option$$
+  - {t: Fun, h: toggle}
+  - {t: Media, h: toggle}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - OUT TOG
+  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - STOP
+  - PP
+  - MUTE
+  Num:
+  - '['
+  - '7'
+  - '8'
+  - '9'
+  - ']'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Base, h: toggle}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&bootloader'
+  - ;
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - \
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Num, h: toggle}
+  - {t: Nav, h: toggle}
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - .
+  - '0'
+  - '-'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  Sym:
+  - '{'
+  - '&'
+  - '*'
+  - (
+  - '}'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Base, h: toggle}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&bootloader'
+  - ':'
+  - $
+  - '%'
+  - ^
+  - +
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - '|'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Sym, h: toggle}
+  - {t: Mouse, h: toggle}
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - (
+  - )
+  - _
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  Fun:
+  - F12
+  - F7
+  - F8
+  - F9
+  - PSCRN
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Base, h: toggle}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&bootloader'
+  - F11
+  - F4
+  - F5
+  - F6
+  - SLCK
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - F10
+  - F1
+  - F2
+  - F3
+  - PAUSE BREAK
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: Fun, h: toggle}
+  - {t: Media, h: toggle}
+  - $$mdi:apple-keyboard-option$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - APP
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  Button:
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - Ctl+Y
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - Ctl+Z
+  - LGUI
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: Ctl+Z, type: held}
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - Ctl+Y
+  - Ctl+Y
+  - Ctl+V
+  - Ctl+C
+  - Ctl+X
+  - {t: Ctl+Z, type: held alternate}
+  - {t: '$$mdi:mouse$$', h: middle}
+  - {t: '$$mdi:mouse-left-click$$', h: left}
+  - {t: '$$mdi:mouse-right-click$$', h: right}
   - {t: '$$mdi:mouse-right-click$$', h: right}
   - {t: '$$mdi:mouse-left-click$$', h: left}
   - {t: '$$mdi:mouse$$', h: middle}
@@ -142,191 +327,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:mouse$$', h: middle, type: held}
-  - {t: '$$mdi:mouse-left-click$$', h: left}
-  - {t: '$$mdi:mouse-right-click$$', h: right}
-  - {t: '$$mdi:mouse-right-click$$', h: right}
-  - {t: '$$mdi:mouse-left-click$$', h: left}
-  - {t: '$$mdi:mouse$$', h: middle}
-  Media:
-  - '&bootloader'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Base, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:bluetooth-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&studio_unlock'
-  - LGUI
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - EP TOG
-  - PREV
-  - VOL DN
-  - VOL UP
-  - NEXT
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-option$$
-  - {t: Sym, h: toggle}
-  - {t: Mouse Auto, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - OUT TOG
-  - {h: '1', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
-  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - STOP
-  - {t: PP, type: held}
-  - MUTE
-  Num:
-  - '['
-  - '7'
-  - '8'
-  - '9'
-  - ']'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Base, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&bootloader'
-  - ;
-  - '4'
-  - '5'
-  - '6'
-  - '='
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LGUI
-  - '`'
-  - '1'
-  - '2'
-  - '3'
-  - \
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Media, h: toggle}
-  - {t: Nav, h: toggle}
-  - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - .
-  - '0'
-  - '-'
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  Sym:
-  - '{'
-  - '&'
-  - '*'
-  - (
-  - '}'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Base, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&bootloader'
-  - ':'
-  - $
-  - '%'
-  - ^
-  - +
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LGUI
-  - '~'
-  - '!'
-  - '@'
-  - '#'
-  - '|'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Num, h: toggle}
-  - {t: Mouse, h: toggle}
-  - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - (
-  - )
-  - _
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
-  Fun:
-  - F12
-  - F7
-  - F8
-  - F9
-  - PSCRN
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Base, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - '&bootloader'
-  - F11
-  - F4
-  - F5
-  - F6
-  - SLCK
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LGUI
-  - {t: F10, type: held}
-  - F1
-  - F2
-  - F3
-  - PAUSE BREAK
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: Sym, h: toggle}
-  - {t: Mouse Auto, h: toggle}
-  - $$mdi:apple-keyboard-option$$
-  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
-  - APP
-  - $$mdi:keyboard-space$$
-  - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  Button:
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - Ctl+Y
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
-  - LGUI
-  - $$mdi:apple-keyboard-option$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
-  - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-option$$
-  - LGUI
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - Ctl+Y
-  - Ctl+Y
-  - Ctl+V
-  - Ctl+C
-  - Ctl+X
-  - Ctl+Z
   - {t: '$$mdi:mouse$$', h: middle}
   - {t: '$$mdi:mouse-left-click$$', h: left}
   - {t: '$$mdi:mouse-right-click$$', h: right}
