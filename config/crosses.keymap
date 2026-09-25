@@ -15,15 +15,6 @@
 #define U_SYM    5
 #define U_FUN    6
 #define U_BUTTON 7
-#define U_MOUSE_AUTO 8
-
-// 엄지로 클릭 버튼(&mkp)을 누르는 순간, 트랙볼용 zip_temp_layer 타임아웃을 300ms로 재설정
-// -> 클릭 직후 거의 바로 mouse_auto_layer에서 빠져나감
-// mkp_input_listener는 &mkp가 정의될 때(behaviors/mouse_keys.dtsi) 같이 생기므로
-// shield .overlay(먼저 처리됨)가 아니라 여기(.keymap, 나중에 처리됨)에 둬야 함
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer U_MOUSE_AUTO 300>;
-};
 
 &lt {
     tapping-term-ms = <200>;
@@ -149,22 +140,6 @@
 &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none      &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI
 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)    &kp LC(Y)  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)
                        &mkp MCLK  &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK  &mkp MCLK
-            >;
-        };
-
-        // 트랙볼 움직임에 의해 자동 활성화되는 전용 레이어(mouse_layer와 별개).
-        // 엄지 클릭 버튼 외 나머지는 전부 &trans로 두어, 자동 활성화 중에도
-        // 타이핑이 방해받지 않도록 함 (mouse_layer는 &bootloader/클립보드 단축키/
-        // 모디파이어 등을 갖고 있어 자동 트리거용으로는 부적합했음).
-        // 반드시 keymap 맨 끝(마지막 레이어)에 있어야 U_MOUSE_AUTO(8)과 실제 번호가 일치함 -
-        // ZMK 레이어 번호는 #define이 아니라 이 파일에 레이어가 나열된 순서로 정해짐.
-        mouse_auto_layer {
-            display-name = "Mouse Auto";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
-                &mkp MCLK  &mkp LCLK  &mkp RCLK    &mkp RCLK  &mkp LCLK  &mkp MCLK
             >;
         };
     };
